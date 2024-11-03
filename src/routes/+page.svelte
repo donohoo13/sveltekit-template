@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ButtonLink from "$components/common/ButtonLink.svelte";
 </script>
 
 <svelte:head>
@@ -17,6 +18,7 @@
 	<header>
 		<h1 id="welcome">Welcome to SvelteKit Template</h1>
 		<p class="subtitle">Built with SvelteKit, CSS and Vite.</p>
+		<ButtonLink class="test" href="/about">Learn More</ButtonLink>
 	</header>
 </section>
 

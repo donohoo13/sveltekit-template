@@ -1,29 +1,18 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
-	import Button from "$components/common/Button.svelte";
+	import ButtonLink from "$components/common/ButtonLink.svelte";
 	import LogoSolid from "$components/navbar/NavbarLogo.svelte";
 </script>
 
-<footer class="full-width-container main-footer">
+<footer class="full-width-container main-footer section-spacing">
 	<div class="container">
 		<div class="logo-section">
-			<LogoSolid height={36} />
+			<LogoSolid height={40} />
 			<p class="catch-phrase"><em>Slogan</em></p>
 		</div>
 
-		<div class="contact">
-			<p>Call to action</p>
-			<Button
-				class="contact-btn"
-				variant="outlined"
-				size="sm"
-				clickHandler={() => goto("/contact")}>Contact</Button
-			>
-		</div>
-
 		<div class="navigation">
-			<p>Navigation</p>
 			<ul>
+				<p>Navigation</p>
 				<li>
 					<a href="/">Home</a>
 				</li>
@@ -31,10 +20,21 @@
 					<a href="/">Contact</a>
 				</li>
 			</ul>
+
+			<ul>
+				<p>Resources</p>
+				<li>
+					<a href="/terms-of-use">Terms of Use</a>
+				</li>
+				<li>
+					<a href="/privacy-policy">Privacy Policy</a>
+				</li>
+			</ul>
 		</div>
 
-		<div class="actions">
-			<ul>
+		<div class="copyright">
+			<!-- ---- Links ---- -->
+			<ul class="actions">
 				<li>
 					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
 						<i class="fa-brands fa-linkedin-in fa-xl" />
@@ -54,23 +54,9 @@
 					</a>
 				</li>
 			</ul>
-		</div>
 
-		<div class="copyright">
-			<ul class="links">
-				<li>
-					<a href="/terms-of-use">Terms of Use</a>
-				</li>
-				<li>
-					<a href="/privacy-policy">Privacy Policy</a>
-				</li>
-			</ul>
-
-			<small>
-				&copy; {new Date().getFullYear()} Donohoo Development, LLC. All rights reserved.
-			</small>
 			<!-- ---- Attribution ---- -->
-			<!-- <small class="attribution">
+			<small class="attribution">
 				Vectors designed by
 				<a
 					href="https://www.freepik.com/author/stories"
@@ -80,24 +66,31 @@
 				>
 					Storyset
 				</a>
-			</small> -->
+			</small>
+
+			<!-- ---- Copyright ---- -->
+			<small>
+				&copy; {new Date().getFullYear()} Donohoo Development, LLC. All rights reserved.
+			</small>
 		</div>
 	</div>
 </footer>
 
 <style scoped>
 	.main-footer {
-		background-color: var(--clr-primary-dark);
+		background-color: var(--clr-primary);
 		color: var(--clr-white);
-		padding: 4rem 2rem;
+		margin-bottom: 0;
 
-		& p {
-			margin: 0;
+		& .catch-phrase {
+			margin: 0.25rem 0;
+			font-size: var(--font-size-caption);
+			color: var(--clr-accent);
 		}
 
 		& > .container {
 			display: grid;
-			gap: 4rem;
+			gap: 2rem;
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
@@ -112,44 +105,21 @@
 		}
 	}
 
-	.contact {
-		@media (min-width: 768px) {
-			grid-column: 1;
-			order: 2;
-		}
-	}
-
-	.contact > :global(.contact-btn) {
-		width: 100%;
-		max-width: 38ch;
-		color: var(--clr-secondary);
-		border-color: var(--clr-secondary);
-		margin-top: 1rem;
-
-		&:hover {
-			background-color: var(--clr-secondary);
-		}
-
-		@media (min-width: 768px) {
-			max-width: 42ch;
-		}
-	}
-
 	.navigation {
 		display: none;
 		font-size: var(--font-size-sm);
-
-		& > p {
-			margin: 0 0 0.5rem;
-			text-decoration: underline;
-			margin-bottom: 2rem;
-		}
 
 		& > ul {
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 			margin: 0;
+
+			& > p {
+				margin: 0 0 0.5rem;
+				text-decoration: underline;
+				margin-bottom: 1rem;
+			}
 
 			& > li {
 				& > a {
@@ -163,15 +133,16 @@
 		}
 
 		@media (min-width: 768px) {
-			display: block;
+			display: flex;
+			justify-content: flex-end;
+			gap: 8rem;
 			grid-column: 2;
-			order: 3;
-			justify-self: flex-end;
+			grid-row: 2;
 		}
 	}
 
-	.actions {
-		& > ul {
+	.copyright {
+		& > .actions {
 			display: flex;
 			gap: 2rem;
 			margin: 0;
@@ -179,24 +150,15 @@
 
 			& > li {
 				& > a {
-					color: var(--clr-secondary);
+					color: var(--clr-accent);
 
 					&:hover {
-						color: var(--clr-accent);
+						color: var(--clr-white);
 					}
 				}
 			}
 		}
 
-		@media (min-width: 768px) {
-			grid-column: 2;
-			order: 5;
-			align-self: flex-end;
-			justify-self: flex-end;
-		}
-	}
-
-	.copyright {
 		& > .links {
 			display: flex;
 			gap: 4rem;
@@ -205,8 +167,6 @@
 			& > li {
 				& > a {
 					margin: 0;
-					font-size: var(--font-size-sm);
-					color: var(--clr-white);
 
 					&:hover {
 						text-decoration: underline;
@@ -218,7 +178,6 @@
 		& > small {
 			display: block;
 			font-size: var(--font-size-caption);
-			color: var(--clr-gray);
 
 			&:first-of-type {
 				margin-top: 2rem;
@@ -226,9 +185,23 @@
 			}
 		}
 
+		& > .attribution {
+			font-size: var(--font-size-caption);
+
+			& > a {
+				color: var(--clr-accent);
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
 		@media (min-width: 768px) {
 			grid-column: 1;
-			order: 4;
+			grid-row: 2;
+			align-self: flex-end;
+			margin-top: 2rem;
 		}
 	}
 </style>

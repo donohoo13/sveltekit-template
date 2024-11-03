@@ -5,7 +5,6 @@
 	import NavbarThemeToggle from "./NavbarThemeToggle.svelte";
 	import NavbarMobileMenuButton from "./NavbarMobileMenuButton.svelte";
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
-	import DigitalLandscape from "../home/assets/DigitalLandscape.svelte";
 	import ButtonLink from "$components/common/ButtonLink.svelte";
 </script>
 
@@ -72,7 +71,7 @@
 					</nav>
 
 					<div class="mobile-menu-divider">
-						<DigitalLandscape />
+						<div></div>
 					</div>
 
 					<footer class="mobile-menu-footer">
