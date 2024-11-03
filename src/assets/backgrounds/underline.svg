@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 400">
+    <defs>
+        <linearGradient id="SvgjsLinearGradient1000" gradientTransform="rotate(74, 0.5, 0.5)">
+            <stop stop-color="hsl(153 39% 30%)" offset="0"></stop>
+            <stop stop-color="hsl(153 39% 30%)" offset="1"></stop>
+        </linearGradient>
+    </defs>
+    <path
+        d="M17.488771438598633,106.72644805908203C101.85349168141684,107.23466944376628,741.7578014246623,108.4663596089681,761.8833618164062,111.21075439453125C782.0089222081502,113.9551491800944,226.3736730957031,128.09565745035806,195.06724548339844,130.9416961669922C163.76081787109376,133.7877348836263,493.57842870076496,135.103130086263,485.6501770019531,136.32286071777344C477.7219253031413,137.54259134928387,112.60983754475912,139.1629192097982,125.1120834350586,141.7040252685547C137.61432932535809,144.24513132731119,542.6008815002441,156.8131440226237,595.964111328125,158.744384765625"
+        fill="none" stroke-width="5" stroke="hsl(153 39% 30%)" stroke-linecap="round"
+        stroke-dasharray="2500" stroke-dashoffset="2500">
+        <animate
+            attributeName="stroke-dashoffset"
+            values="2500;0"
+            dur="1s"
+            fill="freeze"
+            begin="0s"
+            keyTimes="0;1"
+            keySplines=".42 0 1 1"
+            calcMode="spline" />
+        <animate
+            attributeName="stroke-dasharray"
+            values="2500;2500"
+            dur="1s"
+            fill="freeze"
+            begin="0s"
+            keyTimes="0;1"
+            keySplines=".42 0 1 1"
+            calcMode="spline" />
+    </path>
+</svg>
